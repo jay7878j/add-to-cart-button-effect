@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  box-shadow: 0 0 10px #000;
+  padding-bottom: 20px;
+}
+
+.price {
+  font-size: 18px;
+}
+
+.img-container {
+  background-image: url("./curtain.jpg");
+  height: 400px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: top;
+  transition: background-image 0.7s ease;
+}
+
+.img-container:hover {
+  background-image: url("./curtainMain.jpg");
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+.drop-down {
+  width: 100%;
+  height: 40px;
+  margin: 20px 0;
+  outline: none;
+  border-radius: 5px;
+}
+
+.btn {
+  color: #000;
+  border: 1px solid gray;
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: width 1s;
+  border-radius: 5px;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: 0px;
+  background-color: rgb(243, 153, 26);
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+.btn:not(:hover)::before {
+  width: 0;
+  right: 0;
+  left: auto;
+}
